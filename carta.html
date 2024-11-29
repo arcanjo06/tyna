@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carta</title>
+    <style>
+       
+        .letter-paper {
+            width: 80%;
+            max-width: 800px;
+            padding: 30px;
+            background: linear-gradient(145deg, #fff4d3, #e1d7b9);
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            font-size: 18px;
+            color: #4e4b3b;
+            font-family: 'Brush Script', cursive;
+            border: 2px solid #d2c0a1;
+            margin-top: 30px;
+        }
+
+        /* Efeito de rasgado e queimado */
+        .letter-paper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/pw-maze.png') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .letter-paper .burn-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+            mix-blend-mode: multiply;
+            z-index: 2;
+            border-radius: 10px;
+        }
+
+        .letter-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        a{  
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #333333;
+            font-size: 22px;
+            margin: 10px;
+        }
+
+        @keyframes surgir{
+            0%{
+                transform: translateX(300%);
+            }
+            100%{
+                transform: translateX(0%);
+            }
+        }
+
+        p{
+            animation: surgir 5s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <audio src="src/Oceano [ ezmp3.cc ].mp3" id="som" preload="auto"></audio>
+    <div class="letter-paper">
+       
+        <div class="burn-effect"></div>
+        <div class="letter-content">
+            <h2>Carta Pra Naty</h2>
+            <p>Bem, vamo lá né, não sou bom com textinhos mas.....
+                KSJSKSKSKS aí sei lá vey, meio clichê oq vou dizer, mas tu provavelmente nem tem noção,  geralmente eu mando só um parabéns e cabou, mas pra tu não, até pq se fizesse eu apanhava.
+                </p>
+            <p>De verdade nem eu percebi o quanto que a gente se aproximou em um tempo tão curto, só fui vendo tu aparecendo nos contatos frequentes do whatsapp, aparecendo em primeiro no compartilhar do insta e etc. Não vou nem cogitar falar "nossa pq tu n apareceu na minha vida antes" pq a gente se encontrou no momento perfeito e quando ambos precisavam, pelo menos eu precisava de alguém feito vc na minha, preciso até agora, inventa de vazar p tu ver o bagui doido, e feito eu tinha dito pra vc, tu foi a melhor coisa que me aconteceu esse ano, esse ano foi cheio de coisas horriveis, mas coisas incriveis tambem e tu tá nesse meio ai.
+            </p>
+            <p>Mas agora chegou num ponto totalmente diferente doq eu esperava, eu de verdade amo falar ctg, sobre qualquer coisa, lembro de uma das primeiras vezes que tava conversando ctg e meti a piada do pato perder a pata KSKSKSKKSKS, quando a conversa acaba eu automaticamente já sinto falta de conversar ctg, meio gay né, pse, e a mesma coisa acontece quando te vejo, já fico com vontade de ver dps de uma hora, espero q tu seja assim tb pra eu n ser o unico louco aqui KSKSKSKKSK. 
+            </p>
+            <p>
+                De verdade, tu traz um conforto tão único na tua voz ou no teu toque, parece droga sei lá KSKSKS, só sei que amo isso e tenho crtz que vou continuar amando por muito tempo, me sinto completamente bem e em casa ctg, não só eu mas muita gente sente isso, teu jeito é simplismente hipnotizante e eu amei ter encontrado isso, é muito dificil te conhecer e não se apaixonar pelo teu jeito.
+
+            </p>
+            <p>
+                As vezes acho também que era questão de tempo até a gente se aproximar, até pq né, dois doido n anda sozinho n, por mais também que eu ficasse com medo no começo, e sentia que tu também, de sei lá oq, de me aproximar dms, de demonstrar dms e ser taxado de biruta, agr tu q se fode p me aguentar boiolando tlgd, até hj sinto a gente meio ain pra se chegar, mas bem menos.
+            </p>
+            <p>
+                Enfim, espero muito que tu se sinta igual e eu n esteja sentindo demais e ficando louco, mas de vdd, agr vou falar bonito fica vendo, cada toque teu, cada palavra q tu solta, cada mensagem q tu manda do nada só faz eu gostar mais ainda de tu e eu nem sei por que KSKSKKS, dá vontade de demonstrar mesmo, de mandar 500 mensagens independente se tu mandou só uma, de falar que amo toda hora, escuto tanta musica lembrando de tu, oceano, você, die with a smile, aí tô mt gay já parei.
+            </p>
+
+            <p>
+                E por fim, espero q tenha gostado do meu textinho leve, de tudo isso que montei especialmente pra você (se sinta privilegiada pois um site custa 500 pau), tenho vontade de te dar parabéns todo dia pq tu é tu, mas hoje, especialmente hoje o mundo tá 1% mais feliz e eu tô 100% mais porque uma pessoinha tão incrível pra mim nasceu e eu posso estressar, amo vc, parabéns, feliz aniversário, feliz dia do deficiente KAKAKAKKAKAKA, eu te amo dms garota pprt, aproveita muito teu dia, e lembra, tô sempre ctg, beijão.
+            </p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5581996609690?text=Levi lindo, amei o site tome 20 no pix" target="_blank">
+        <button class="button">Agora aperta aqui e vem me mandar uma msg por gentileza</button>
+    </a>
+
+    <script>
+        const som = document.getElementById("som");
+
+        som.play();
+    </script>
+</body>
+</html>

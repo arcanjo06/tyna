@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versos de Músicas</title>
+    <style>
+        /* Configurações Gerais */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-image: url('src/bkg.jpg');
+            background-size: inherit;
+            font-family: Arial, sans-serif;
+            color: #FFFFFF;
+            text-align: center;
+            white-space: hidden;
+    }
+
+h1 {
+    position: absolute;
+    top: 10%;
+    color: #252525;
+    font-family: 'Lucida Grande', serif;
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+.versos {
+    margin: 45px;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: #2c2c2cbe;
+    font-weight: bold;
+    opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: scroll 40s alternate infinite;
+}
+
+/* Animação de Rolagem para os Versos */
+@keyframes scroll {
+    0% { transform: translateX(50%); }
+    100% { transform: translateX(-50%); }
+}
+
+.versos span {
+    margin-right: 50px;
+    display: inline-block;
+    text-align: center; /* Espaço entre os versos */
+}
+
+.quote {
+    font-size: 32px;
+    font-style: italic;
+}
+
+.artist-song {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Ajustes para Responsividade em Telas Pequenas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+        top: 5%; /* Ajusta a posição */
+    }
+
+    .versos {
+        font-size: 1rem; /* Diminui o tamanho da fonte dos versos */
+        margin: 20px; /* Diminui o espaçamento das margens */
+    }
+
+    .quote {
+        font-size: 24px; /* Diminui o tamanho da citação */
+    }
+
+    .artist-song {
+        font-size: 18px; /* Diminui o tamanho da fonte do artista/música */
+    }
+
+    a {
+        font-size: 18px; /* Ajusta o tamanho do link */
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* Ajustes para Telas Menores que 480px (ex: celulares menores) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem; /* Mais redução no título */
+    }
+
+    .versos {
+        font-size: 0.9rem; /* Menor tamanho para os versos */
+        margin: 10px; /* Menos margem */
+    }
+
+    .quote {
+        font-size: 20px; /* Menor tamanho para a citação */
+    }
+
+    .artist-song {
+        font-size: 16px; /* Menor tamanho para artista/música */
+    }
+
+    a {
+        font-size: 16px; /* Menor tamanho para o link */
+        top: 5px;
+        left: 5px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <a href="index.html">Voltar pra pagina principal</a>
+    <h1>Versos de Músicas que Escuto e Penso em Você</h1>
+
+    <audio id="som" src="src/videoplayback.m4a" preload="auto"></audio>
+
+    <!-- Versos Animados -->
+    <div class="versos">
+        <span>
+            <span class="quote">"Você,É mais do que sei,É mais que pensei,É mais que esperava, baby"</span><br>
+            <span class="artist-song">Tim Maia - "Você"</span>
+        </span>
+        <span>
+            <span class="quote">"Você tem, Flores na cabeça e pétalas no coração"</span><br>
+            <span class="artist-song">Liniker - "Sem nome mas com endereço"</span>
+        </span>
+        <span>
+            <span class="quote">"Para fazer um escarcéu com teu sorriso, Nem ligo, a gente pode demorar"</span><br>
+            <span class="artist-song">Liniker - "Veludo Marrom"</span>
+        </span>
+        <span>
+            <span class="quote">"😭😭NÃO DÁ PRA BOTAR A LETRA INTEIRA DE OCEANO😭😭"</span><br>
+            <span class="artist-song">Djavan - "Oceano"</span>
+        </span>
+        <span>
+            <span class="quote">"Ver na vida algum motivo pra sonhar, Ter um sonho todo azul,Azul da cor do mar"</span><br>
+            <span class="artist-song">Tim Maia - "Azul da Cor do Mar"</span>
+        </span>
+        <span>
+            <span class="quote">"Te amo, Nosso ódio pelo mundo é parecido"</span><br>
+            <span class="artist-song">Baco Exu do Blues - "Te amo Disgraça"</span>
+        </span>
+        <span>
+            <span class="quote">"Eu amo você, menina, Eu amo você"</span><br>
+            <span class="artist-song">Tim maia-"Eu Amo Você"</span>
+        </span>
+        <span>
+            <span class="quote">"Bésame, bésame mucho, Como si fuera esta noche la ultima vez"</span><br>
+            <span class="artist-song">Baco Exu do Blues - "Tardes Que Nunca Acabam"</span>
+        </span>
+    </div>
+    <br><br>
+
+    <div class="versos">
+        <span>
+            <span class="quote">"Eu gosto de você, E gosto de ficar com você"</span><br>
+            <span class="artist-song">Tribalistas - "Velha Infancia"</span>
+        </span>
+        <span>
+            <span class="quote">"Seu olhar é lindo,Ver você sorrindo é demais"</span><br>
+            <span class="artist-song">Djavan - "Tenha calma"</span>
+        </span>
+        <span>
+            <span class="quote">"Eu tô com uma vontade danada, De te entregar todos os beijos que eu não te dei"</span><br>
+            <span class="artist-song">Rubel - "Quando Bate Aquela Saudade"</span>
+        </span>
+        <span>
+            <span class="quote">"Você muda tudo, e tudo fica tão bem"</span><br>
+            <span class="artist-song">Tim Bernardes - "BB"</span>
+        </span>
+        <span>
+            <span class="quote">"Tudo vale a pena pra te encontrar"</span><br>
+            <span class="artist-song">Charlie Brown Jr - "Como tudo deve ser"</span>
+        </span>
+        <span>
+            <span class="quote">"Eu gosto tanto de você, Que até prefiro esconder"</span><br>
+            <span class="artist-song">Lulu Santos - "Apenas mais uma de amor"</span>
+        </span>
+        <span>
+            <span class="quote">"Então me abraça forte, E diz mais uma vez que já estamos distantes de tudo"</span><br>
+            <span class="artist-song">Legião urbana-"Tempo Perdido"</span>
+        </span>
+        <span>
+            <span class="quote">"If the world was ending, I'd wanna be next to you"</span><br>
+            <span class="artist-song">Bruno Mars ft.Lady GaGa - "Die with i smile"</span>
+        </span>
+    </div>
+
+    <script>
+        const sound=document.getElementById("som");
+
+        sound.play();
+
+    </script>
+
+</body>
+</html>

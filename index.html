@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Site Pra Naty</title>
+    <style>
+        .game-container {
+    background-color: aliceblue;
+    border: 2px solid black;
+    width: 80%;
+    height: 500px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.game-status {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.target {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.scoreboard {
+    top: 10px;
+    left: 10px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.timer {
+    top: 10px;
+    right: 10px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.restart-btn {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 2em;
+    background-color: #234558;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restart-btn:hover {
+    background-color: #00304d;
+}
+
+.card-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    .game-container {
+        width: 90%;
+        height: 450px;
+    }
+
+    .target {
+        width: 250px;
+        height: 250px;
+    }
+
+    .scoreboard, .timer {
+        font-size: 1.3em;
+    }
+
+    .restart-btn {
+        font-size: 1.8em;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .game-container {
+        width: 95%;
+        height: 600px;
+    }
+
+    .target {
+        width: 220px;
+        height: 220px;
+    }
+
+    .scoreboard, .timer {
+        font-size: 1.2em;
+    }
+
+    .restart-btn {
+        font-size: 1.6em;
+        padding: 7px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        width: 95%;
+        height: 380px;
+    }
+
+    .target {
+        width: 200px;
+        height: 200px;
+    }
+
+    .scoreboard, .timer {
+        font-size: 1.1em;
+    }
+
+    .restart-btn {
+        font-size: 1.5em;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        width: 100%;
+        height: 350px;
+    }
+
+    .target {
+        width: 180px;
+        height: 180px;
+    }
+
+    .scoreboard, .timer {
+        font-size: 1em;
+    }
+
+    .restart-btn {
+        font-size: 1.4em;
+        padding: 5px 12px;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <h1>💙Site Pra Naty💙</h1>
+    <p>No final disso tudo tem uma cartinha especialmente pra você, mas antes tem umas atrocidades aí</p>
+
+    <h1>Videozinho fofo ein ein</h1>
+
+    <video src="src/video-ia.mp4" controls="true"></video>
+    
+    <p>Esse foi um video feito por IA de nois se abraçando pq até o momento que tô digitando isso a gente n tem UMA FOTO abraçados</p>
+    <p>Achei o video lindo, faria um quadro e botaria na minha casa no futuro, ou na nossa casa, vai q</p>
+    <p>Mas como nem tudo são flores, assista essa sequência de videos horriveis que a ia gerou</p>
+
+    <video src="src/video-feio.mp4" controls="true"></video>
+    <p>Virei um indiano</p>
+
+    <video src="src/video-feio (1).mp4" controls="true"></video>
+    <p>Brotou o irmão de robson com a camisa igual a minha</p>
+    <p>E eu virei indiano pt.2</p>
+
+    <video src="src/video-feio (2).mp4" controls="true"></video>
+    <p>Eu com duas cabeças</p>
+
+    <video src="src/video-feio (3).mp4" controls="true"></video>
+    <p>Tu dando uma de exorcista, creio em Deus pai</p>
+    <p>E eu de VESTIDO AKAKKAAKAK</p>
+
+
+    <video src="src/video-feio (4).mp4" controls="true"></video>
+    <p>Cara, não me pergunte...</p>
+
+    <video src="src/video-feio (5).mp4" controls="true"></video>
+    <p>Virei indiano pt.3</p>
+    <br><br><br><br>
+
+    <p>Ri mt vendo isso sério</p>
+    <p>Agora bora pro próximo</p>
+
+    <h1>Joguinho</h1>
+    <div class="game-container" id="gameContainer">
+        <div class="game-status">
+            <div class="scoreboard">Beijos: <span id="score">0</span></div>
+            <h2>Clique em mim pra me dar os beijos q tais me devendo😘</h2>
+            
+            
+            <div class="timer">Tempo: <span id="time">30</span>s</div>
+        </div>
+        <p>(Aumente o som)</p>
+        <div class="target" id="target"></div>
+        
+
+        <button class="restart-btn" id="restartBtn" onclick="resetGame()">Reiniciar</button>
+
+        <audio src="src/finger-kiss-37026.mp3" preload="auto" id="sound"></audio>
+    </div>
+
+    <p>Lindo né</p>
+    <p>Agora bora pra outra parte que tu vai amar mais ainda, aperta ai</p>
+
+    <a href="music.html"><h1>Aperte e Descubra</h1></a>
+    <p>Espero que tenha visto viu, deu trabalho, or</p>
+    <p>Seguindo, bora finalmente pro texto que guardei pra te dizer  nesse dia tão bom</p>
+
+    
+    <!-- Botão para abrir as divs -->
+<div class="card-box">
+
+        <button class="button" onclick="showCards()">Abrir Carta</button>
+    
+
+
+    <!-- Div que contém as cartas -->
+    <div class="card-container" id="card-container">
+        <div class="card">
+            <p>Esta é a carta falsa otária KAKAKAKAKAKKAK, clica aí pra ir pra real</p>
+        </div>
+        <div class="card">
+            <a href="carta.html" class="real-link" target="_blank">Clique aqui para ver a verdadeira carta</a>
+        </div>
+    </div>
+
+</div>
+
+    <script>
+        // Função para exibir as cartas ao clicar no botão
+        function showCards() {
+            var cardContainer = document.getElementById("card-container");
+            cardContainer.style.display = "flex"; // Torna as divs visíveis
+        }
+
+        const target = document.getElementById("target");
+const scoreDisplay = document.getElementById("score");
+const timeDisplay = document.getElementById("time");
+const gameContainer = document.getElementById("gameContainer");
+const restartBtn = document.getElementById("restartBtn");
+const sound = document.getElementById("sound");
+
+let score = 0;
+let time = 30;
+let gameInterval;
+let targetSize = 300; // Tamanho inicial do alvo
+
+// Defina a URL da imagem do alvo
+const targetImageUrl = 'src/no_background_eu.png'; // Substitua com a URL da sua imagem
+target.style.backgroundImage = `url(${targetImageUrl})`;
+
+window.addEventListener("resize", () => {
+    // Recalcula o tamanho do alvo com base no tamanho da tela
+    targetSize = Math.min(100, Math.max(60, window.innerWidth * 0.2)); // Tamanho máximo 300px e mínimo 60px
+    target.style.width = `${targetSize}px`;
+    target.style.height = `${targetSize}px`;
+
+    // Move o alvo para uma posição dentro da nova tela
+    moveTarget();
+});
+
+function moveTarget() {
+    // Atualiza as posições aleatórias, considerando as dimensões da tela
+    const maxX = gameContainer.offsetWidth - targetSize;
+    const maxY = gameContainer.offsetHeight - targetSize;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    target.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+target.addEventListener("click", () => {
+    score++;
+    targetSize = Math.max(60, targetSize - 2); // Reduz o tamanho do alvo até um mínimo de 60px
+    target.style.width = `${targetSize}px`;
+    target.style.height = `${targetSize}px`;
+    scoreDisplay.textContent = score;
+
+    // Acelera o som e o toca
+    sound.playbackRate = 1.5;
+    sound.play();
+
+    // Mover o alvo após o clique
+    moveTarget();
+});
+
+function startTimer() {
+    gameInterval = setInterval(() => {
+        time--;
+        timeDisplay.textContent = time;
+        if (time <= 0) {
+            clearInterval(gameInterval);
+            timeDisplay.textContent = "0";
+            restartBtn.style.display = "block";
+            target.style.display = "none"; // Ocultar o alvo ao terminar
+        }
+    }, 1000);
+}
+
+function resetGame() {
+    // Redefine o estado do jogo
+    score = 0;
+    time = 30;
+    targetSize = 300; // Tamanho inicial do alvo
+    scoreDisplay.textContent = score;
+    timeDisplay.textContent = time;
+    target.style.width = `${targetSize}px`;
+    target.style.height = `${targetSize}px`;
+    target.style.display = "block"; // Mostrar o alvo
+    restartBtn.style.display = "none"; // Ocultar o botão de reiniciar
+
+    moveTarget(); // Mover o alvo para uma nova posição
+    startTimer(); // Iniciar o cronômetro
+}
+
+// Iniciar o jogo
+resetGame();
+
+// Responsividade (redimensionamento dinâmico)
+
+
+    </script>
+    
+</body>
+</html>
